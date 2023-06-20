@@ -20,13 +20,21 @@ Java Version: 17
 **Technologies Used:**
 
 **Spring Boot:** It is the main framework used for developing the application.
+
 **Spring Boot Starter Parent:** It provides the parent configuration for the Spring Boot project.
+
 **Spring Boot Starter Data JPA:** It enables the use of Java Persistence API (JPA) for data access and object-relational mapping.
+
 **Spring Boot Starter Web:** It provides the necessary dependencies to build web applications with Spring MVC.
+
 **Spring Boot DevTools:** It offers development-time features like automatic application restart and live reload.
+
 **H2 Database:** It is an in-memory database used for development and testing purposes.
+
 **Project Lombok:** It is a library that simplifies the development process by automatically generating boilerplate code such as getters, setters, constructors, etc.
+
 **Spring Boot Starter Test:** It provides testing dependencies and utilities for writing unit and integration tests.
+
 **Pact JVM Provider JUnit 5 Spring:** It is a library for creating consumer-driven contracts and testing interactions between providers and consumers in distributed systems.
 
 
