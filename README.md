@@ -23,6 +23,7 @@ This command will start the application container along with any necessary depen
 
 Open your Postman and visit 
 POST -  http://localhost:8080/receipt/process
+
 GET - http://localhost:8080/receipt/{id}/points
 
 stop the application and the associated containers, use the following command
