@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
+
+import java.util.UUID;
 
 @Data
 @Builder
@@ -14,14 +17,20 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ItemEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "item_id", nullable = false)
-    private Long id;
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @Column(name = "item_id", nullable = false, columnDefinition = "BINARY(16)")
+    private UUID id;
+
     @Column(name = "shortDescription", nullable = false)
     private String shortDescription;
     @Column(name = "price", nullable = false)
-    private String price;
+    private double price;
     @ManyToOne
     @JoinColumn(name = "purchase_id")
     private PurchaseEntity purchase;
+
+//    @ManyToOne
+//    @JoinColumn(name = "purchase_id", referencedColumnName = "purchase_id")
+//    private PurchaseEntity purchase;
 }
