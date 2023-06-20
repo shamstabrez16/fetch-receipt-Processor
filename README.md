@@ -13,8 +13,11 @@ Make sure you have the following installed on your machine:
 # Setup
 1. Clone the repository - git clone https://github.com/shamstabrez16/fetch-receipt-processor.git
 2. Navigate to the project directory - fetch-receipt-processor., use command -> cmd - cd <project_directory>
-3. Make sure you have Docker applictaion running 
-4. Build the Docker image - **docker-compose up --build**
+3. Make sure you have Docker applictaion running
+4. using the command **./mvnw.cmd clean package** to build the jar file
+5. Build the Docker image - **docker-compose up --build**
+
+   NOTE:_ Please make sure No service is running on port 8080. _
 
 # Running the Application
 1. Start the application using Docker Compose
