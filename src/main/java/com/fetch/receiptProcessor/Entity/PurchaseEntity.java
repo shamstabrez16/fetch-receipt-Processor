@@ -5,8 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Data
 @Builder
@@ -16,9 +19,11 @@ import java.util.List;
 @AllArgsConstructor
 public class PurchaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "purchase_id", nullable = false)
-    private Long id;
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @Column(name = "purchase_id", nullable = false, columnDefinition = "BINARY(16)")
+    private UUID id;
+
     @Column(name = "retailer", nullable = false)
     private String retailer;
     @Column(name = "purchaseDate", nullable = false)
@@ -28,5 +33,5 @@ public class PurchaseEntity {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "purchase")
     private List<ItemEntity> items;
     @Column(name = "total", nullable = false)
-    private String total;
+    private double total;
 }
