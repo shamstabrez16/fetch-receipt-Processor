@@ -1,7 +1,8 @@
 # fetch-receipt-processor
  fetch-receipt-processor challenge
  
-Running Application in Docker
+**Running Application in Docker**
+
 This guide explains how to run the application inside a Docker container using a Docker Compose file.
 
 # Prerequisites
