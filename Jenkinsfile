@@ -6,6 +6,8 @@ pipeline {
       steps {
         // Checkout source code
         checkout scm
+        sh 'echo "starting build ./mvnw"'
+        sh './mvnw'
 
         // Build the application
         sh './mvnw clean package'
