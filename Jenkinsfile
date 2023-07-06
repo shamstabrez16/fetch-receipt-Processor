@@ -8,7 +8,7 @@ pipeline {
         checkout scm
 
         // Build the application
-        sh './mvnw.cmd clean package'
+        sh './mvnw clean package'
       }
     }
 
