@@ -8,14 +8,14 @@ pipeline {
         checkout scm
 
         // Build the application
-        sh './mvnw clean package'
+        sh './mvnw.cmd clean package'
       }
     }
 
     stage('Unit Test') {
       steps {
         // Run unit tests
-        sh './mvnw test'
+        sh './mvnw.cmd test'
       }
     }
 
