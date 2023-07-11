@@ -33,7 +33,14 @@ public class ReceiptController {
 
     @GetMapping("/{id}/points")
     public ResponseEntity<PointsDTO> getPoints(@PathVariable @NonNull UUID id){
-        return ResponseEntity.ok().body(purchaseService.getPoints(id));
+        ResponseEntity<PointsDTO> result = null;
+        try{
+            result =  ResponseEntity.ok().body(purchaseService.getPoints(id));
+        }
+        catch (Exception e) {
+            // Exception will be handled by the ErrorHandlingAspect
+        }
+    return  result;
     }
 
 }
